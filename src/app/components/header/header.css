@@ -3,31 +3,106 @@
   padding-top: var(--spacing-500, 40px);
   align-items: center;
   gap: -32px;
-  align-self: stretch;
-  background-color: grey;
+
+  width: 100%;
+  position: relative;
+  justify-content: flex-end;
+  
 }
 #left {
   display: flex;
   padding-left: var(--spacing-800, 64px);
   align-items: center;
   gap: var(--spacing-800, 64px);
-  flex: 1 0 0;
+  z-index: 1;
+
+
+  width: 740px;
+height: 40px;
+position: absolute;
+left: 0;
 }
 #right {
   display: flex;
-  min-width: 664px;
-  padding: 0 var(--spacing-800, 64px);
-  justify-content: flex-end;
+  width: 50%;
+  height: 96px;
+  padding-right: 80px;
+  padding-left: 159px;
+  justify-content: end ;
   align-items: center;
   gap: var(--spacing-600, 48px);
-  flex: 1 0 0;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(40px);
   flex-direction: row;
+
+
 }
 a {
   flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--color-white, #FFF);
+font-feature-settings: 'liga' off, 'clig' off;
+font-family: "Barlow Condensed";
+font-size: var(--font-size-desktop-text-preset-8, 16px);  
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 2px;
+text-decoration: none;
+gap: 10px;
+}
+h1{
+  font-size: var(--font-size-desktop-text-preset-8, 16px);  
+}
+#h{
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ;
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
+
+#h:hover{
+
+  border-bottom: 4px solid rgb(255, 255, 255);  
+}
+#d{
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ;
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
+#d:hover{
+
+  border-bottom: 4px solid rgb(255, 255, 255);
+}
+
+#c{
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ;
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
+#c:hover{
+
+  border-bottom: 4px solid rgb(255, 255, 255);
+}
+#t{
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ;
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
+#t:hover{
+
+  border-bottom: 4px solid rgb(255, 255, 255);
 }
