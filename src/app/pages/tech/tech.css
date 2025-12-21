@@ -1,0 +1,90 @@
+main.tech-hero {
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* remove bottom padding: keep top spacing only */
+  padding: 48px 0 0 0;
+  background-image: url('/assets/assets/technology/background-technology-desktop.jpg');
+  background-repeat: no-repeat;
+  /* reduce desktop zoom */
+  background-size: 100% auto;
+  background-position: center right;
+}
+.hero-inner {
+  width: min(92%, 1200px);
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-copy {
+  max-width: 560px;
+  color: #fff;
+}
+.tech-media img {
+  width: 420px;
+  border-radius: 8px;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  main.tech-hero {
+    background-image: url('/assets/assets/technology/background-technology-tablet.jpg');
+    background-size: cover;
+  }
+}
+@media (max-width: 767px) {
+  main.tech-hero {
+    background-image: url('/assets/assets/technology/background-technology-mobile.jpg');
+    background-position: center center;
+    background-size: cover;
+  }
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .tech-media img {
+    width: 240px;
+  }
+}
+
+/* tech controls styling */
+.tech-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.tech-controls button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.tech-controls button.active {
+  background: #fff;
+  color: #0b0d17;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .tech-media img {
+    width: 320px;
+  }
+}
+
+/* typography for tech page */
+.hero-title {
+  font-family: 'Bellefair', serif;
+  font-size: 68px;
+  letter-spacing: 3px;
+  margin: 0 0 18px 0;
+}
+.hero-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 520px;
+}

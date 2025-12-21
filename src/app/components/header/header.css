@@ -1,108 +1,198 @@
 .header {
   display: flex;
-  padding-top: var(--spacing-500, 40px);
   align-items: center;
-  gap: -32px;
-
   width: 100%;
   position: relative;
-  justify-content: flex-end;
-  
+  /* Slightly more bottom padding so the nav pill and underline sit lower on the page */
+  /* remove extra bottom padding as requested */
+  padding: 20px 0 0 0;
+  background: transparent; /* ensure header itself has no background */
 }
 #left {
   display: flex;
-  padding-left: var(--spacing-800, 64px);
   align-items: center;
-  gap: var(--spacing-800, 64px);
-  z-index: 1;
-
-
-  width: 740px;
-height: 40px;
-position: absolute;
-left: 0;
+  gap: 24px;
+  z-index: 2;
+  position: absolute;
+  left: 48px;
+  top: 24px;
 }
 #right {
   display: flex;
-  width: 50%;
-  height: 96px;
-  padding-right: 80px;
-  padding-left: 159px;
-  justify-content: end ;
   align-items: center;
-  gap: var(--spacing-600, 48px);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(40px);
-  flex-direction: row;
+  gap: 40px;
+  margin-left: auto;
+  margin-right: 80px; /* push it a bit further right like the mock */
+  height: 72px;
+  padding: 0 20px;
+  /* Keep the header itself transparent; render the blur via a pseudo-element so
+    the pill shows blur without tint on the header container itself. */
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: none;
+  position: relative;
+}
 
-
+/* Blur pseudo-element for the pill (no visible tint) */
+#right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  /* a very small alpha combined with backdrop-filter gives a blur while keeping
+    the visible tint minimal. Increase blur value to taste. */
+  background: rgba(255, 255, 255, 0.002);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: -1;
 }
 a {
   flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-white, #FFF);
-font-feature-settings: 'liga' off, 'clig' off;
-font-family: "Barlow Condensed";
-font-size: var(--font-size-desktop-text-preset-8, 16px);  
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 2px;
-text-decoration: none;
-gap: 10px;
+  color: var(--color-white, #fff);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-decoration: none;
+  gap: 10px;
 }
-h1{
-  font-size: var(--font-size-desktop-text-preset-8, 16px);  
+h1 {
+  /* legacy rule - headings inside nav were changed to .index spans; keep for safety */
+  font-size: var(--font-size-desktop-text-preset-8, 16px);
 }
-#h{
-  height: 95%;
+.index {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 6px;
+}
+#right > div {
+  /* Ensure each nav item spans the full height of the nav so the border sits at the bottom */
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: 0.2s ;
-  border-bottom: 4px solid rgba(255, 255, 255, 0);
+  padding: 0 12px;
+  position: relative;
 }
 
-#h:hover{
-
-  border-bottom: 4px solid rgb(255, 255, 255);  
+#right > div::after {
+  content: '';
+  position: absolute;
+  /* subtle shorter underline that aligns with the text block */
+  left: 14px;
+  right: 14px;
+  bottom: 0;
+  height: 3px;
+  background: transparent;
+  transition: background 0.18s ease, transform 0.18s ease, opacity 0.12s ease;
+  transform-origin: center;
+  transform: translateY(0);
+  opacity: 0;
 }
-#d{
-  height: 95%;
+
+#right > div:hover::after,
+#right > div.active::after {
+  background: rgb(255, 255, 255);
+  transform: translateY(0);
+  opacity: 1;
+}
+/* parent active state handled via ::after and link styles above */
+/* individual nav items use the shared rule above (#right > div) */
+
+/* Active state: the parent div receives `active` via routerLinkActive; underline handled by ::after */
+
+/* #c and #t share styles via #right > div above. No additional rules required. */
+
+/* Hamburger (mobile) */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  margin-left: auto;
+  margin-right: 48px;
+  z-index: 50;
+}
+.hamburger-box {
+  width: 32px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 32px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  display: block;
+  position: absolute;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+.hamburger-inner {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger-inner::before {
+  content: '';
+  top: -10px;
+}
+.hamburger-inner::after {
+  content: '';
+  top: 10px;
+}
+
+/* Mobile overlay */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 13, 23, 0.8);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.2s ;
-  border-bottom: 4px solid rgba(255, 255, 255, 0);
+  justify-content: flex-end;
+  z-index: 40;
 }
-#d:hover{
-
-  border-bottom: 4px solid rgb(255, 255, 255);
-}
-
-#c{
-  height: 95%;
+.mobile-nav {
+  width: 260px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  padding: 48px 24px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.2s ;
-  border-bottom: 4px solid rgba(255, 255, 255, 0);
+  flex-direction: column;
+  gap: 20px;
 }
-#c:hover{
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 2px;
+}
 
-  border-bottom: 4px solid rgb(255, 255, 255);
+/* tighten nav link styles */
+#right a {
+  padding: 6px 4px;
 }
-#t{
-  height: 95%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.2s ;
-  border-bottom: 4px solid rgba(255, 255, 255, 0);
-}
-#t:hover{
 
-  border-bottom: 4px solid rgb(255, 255, 255);
+/* make active link more prominent */
+#right > div.active a {
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  /* hide desktop pill nav and show hamburger */
+  #right {
+    display: none;
+  }
+  .hamburger {
+    display: inline-block;
+  }
+  #left {
+    left: 20px;
+    top: 16px;
+  }
 }

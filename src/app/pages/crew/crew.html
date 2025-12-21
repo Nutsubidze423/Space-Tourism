@@ -1,1 +1,30 @@
-<p>crew works!</p>
+<main class="crew-hero">
+  <div class="hero-inner">
+    <section class="hero-copy">
+      <p class="eyebrow">MEET YOUR CREW</p>
+      <h1 class="hero-title">COMMAND CREW</h1>
+      <!-- removed generic description so the page shows only selected member content per design -->
+      <nav class="crew-controls" aria-label="Select crew member">
+        <button
+          *ngFor="let m of members; let i = index"
+          (click)="select(i)"
+          [class.active]="i === selected"
+          aria-pressed="{{ i === selected }}"
+        ></button>
+      </nav>
+    </section>
+
+    <section class="hero-media">
+      <div class="crew-list">
+        <div class="crew-text">
+          <p class="crew-role">{{ members[selected].role }}</p>
+          <h2 class="crew-name">{{ members[selected].name }}</h2>
+          <p class="crew-bio">{{ members[selected].bio }}</p>
+        </div>
+        <div class="crew-photo">
+          <img [src]="members[selected].image" [alt]="members[selected].name" />
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

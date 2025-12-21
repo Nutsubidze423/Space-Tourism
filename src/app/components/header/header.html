@@ -1,19 +1,68 @@
 <div class="header">
-    <div id="left">
-        <img src="./logo.svg" alt="">
-<hr style="width: 100%;">
+  <div id="left">
+    <a routerLink="/">
+      <img src="/assets/assets/shared/logo.svg" alt="Space Tourism logo" />
+    </a>
+    <hr style="width: 100%" />
+  </div>
+  <button
+    class="hamburger"
+    aria-label="Open menu"
+    (click)="toggleMenu()"
+    aria-expanded="{{ mobileOpen }}"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
 
+  <div id="right" role="navigation" aria-label="Main navigation">
+    <div id="h" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/" (click)="closeMenu()">
+        <span class="index">00</span>
+        HOME
+      </a>
     </div>
-    <div id="right">
-        <div id="h">  <a routerlink="/"><h1>00 </h1> HOME</a></div>
-        <div id="d">  <a routerlink="/destination"><h1>01 </h1> DESTINATION</a></div>
-        <div id="c">  <a routerlink="/crew"><h1>02 </h1> CREW</a></div>
-        <div id="t">  <a routerlink="/tech"><h1>03 </h1> TECHNOLOGIES</a></div>
-        
-      
-       
-        
-      
-     
+    <div id="d" routerLinkActive="active">
+      <a routerLink="/destination" (click)="closeMenu()">
+        <span class="index">01</span>
+        DESTINATION
+      </a>
     </div>
+    <div id="c" routerLinkActive="active">
+      <a routerLink="/crew" (click)="closeMenu()">
+        <span class="index">02</span>
+        CREW
+      </a>
+    </div>
+    <div id="t" routerLinkActive="active">
+      <a routerLink="/tech" (click)="closeMenu()">
+        <span class="index">03</span>
+        TECHNOLOGIES
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile overlay menu -->
+  <div class="mobile-overlay" *ngIf="mobileOpen" (click)="closeMenu()">
+    <nav class="mobile-nav" (click)="$event.stopPropagation()">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+      >
+        <span class="index">00</span> HOME
+      </a>
+      <a routerLink="/destination" routerLinkActive="active" (click)="closeMenu()">
+        <span class="index">01</span> DESTINATION
+      </a>
+      <a routerLink="/crew" routerLinkActive="active" (click)="closeMenu()">
+        <span class="index">02</span> CREW
+      </a>
+      <a routerLink="/tech" routerLinkActive="active" (click)="closeMenu()">
+        <span class="index">03</span> TECHNOLOGIES
+      </a>
+    </nav>
+  </div>
 </div>

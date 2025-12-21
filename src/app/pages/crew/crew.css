@@ -1,0 +1,122 @@
+main.crew-hero {
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* remove bottom padding: keep top spacing only */
+  padding: 48px 0 0 0;
+  background-image: url('/assets/assets/crew/background-crew-desktop.jpg');
+  background-repeat: no-repeat;
+  /* reduce desktop zoom */
+  background-size: 100% auto;
+  background-position: center right;
+}
+.hero-inner {
+  width: min(92%, 1200px);
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-copy {
+  max-width: 560px;
+  color: #fff;
+}
+.eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: 'Bellefair', serif;
+  font-size: 64px;
+  margin: 0 0 24px 0;
+  letter-spacing: 1px;
+}
+.hero-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+.crew-list img {
+  width: 320px;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  main.crew-hero {
+    background-image: url('/assets/assets/crew/background-crew-tablet.jpg');
+    background-size: cover;
+  }
+}
+@media (max-width: 767px) {
+  main.crew-hero {
+    background-image: url('/assets/assets/crew/background-crew-mobile.jpg');
+    background-position: center center;
+    background-size: cover;
+  }
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .crew-list img {
+    width: 200px;
+  }
+}
+
+/* Crew specific controls and layout */
+.crew-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.crew-photo img {
+  width: 540px;
+  border-radius: 8px;
+}
+.crew-text {
+  max-width: 520px;
+  color: #fff;
+}
+.crew-role {
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.crew-name {
+  font-family: 'Bellefair', serif;
+  font-size: 48px;
+  margin: 6px 0 16px 0;
+}
+.crew-bio {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+.crew-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.crew-controls button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+.crew-controls button.active {
+  background: #fff;
+}
+
+@media (max-width: 1024px) {
+  .crew-photo img {
+    width: 380px;
+  }
+}
+
+@media (max-width: 767px) {
+  .crew-photo img {
+    width: 220px;
+  }
+  .crew-list {
+    flex-direction: column;
+  }
+}

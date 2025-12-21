@@ -1,1 +1,31 @@
-<p>tech works!</p>
+<main class="tech-hero">
+  <div class="hero-inner">
+    <section class="hero-copy">
+      <p class="eyebrow">SPACE LAUNCH 101</p>
+      <h1 class="hero-title">{{ items[selected].name }}</h1>
+      <p class="hero-desc">
+        {{ items[selected].description }}
+      </p>
+
+      <div class="tech-controls" role="tablist" aria-label="Technology selection">
+        <button
+          *ngFor="let it of items; let i = index"
+          (click)="select(i)"
+          [class.active]="i === selected"
+        >
+          {{ i + 1 }}
+        </button>
+      </div>
+    </section>
+
+    <section class="hero-media">
+      <div class="tech-media">
+        <!-- landscape for larger screens, portrait for narrow screens -->
+        <picture>
+          <source media="(max-width: 767px)" [srcset]="items[selected].imagePortrait" />
+          <img [src]="items[selected].imageLandscape" [alt]="items[selected].name" />
+        </picture>
+      </div>
+    </section>
+  </div>
+</main>
