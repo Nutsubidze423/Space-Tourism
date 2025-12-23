@@ -37,8 +37,8 @@ main.contact-hero {
 
 .hero-title {
   font-family: 'Bellefair', serif;
-  font-size: 60px;
-  margin: 0 0 24px 0;
+  font-size: 60px !important;
+  padding: 0 0 24px 0;
   letter-spacing: 4px;
   animation: slideInLeft 0.8s ease 0.3s both;
 }
@@ -88,10 +88,12 @@ main.contact-hero {
     margin: 0;
   }
   .hero-title {
-    font-size: 28px;
+    font-size: 23px;
   }
+
   .hero-desc {
-    font-size: 13px;
+    font-size: 10px;
+   
   }
   .eyebrow {
     font-size: 10px;
@@ -101,7 +103,7 @@ main.contact-hero {
   }
   .form-group input,
   .form-group textarea {
-    font-size: 13px;
+    font-size: 10px;
     padding: 10px 12px;
   }
 }
@@ -198,7 +200,7 @@ main.contact-hero {
   }
 
   .hero-title {
-    font-size: 56px;
+    font-size: 30px !important;
   }
 
   .contact-form-section {
