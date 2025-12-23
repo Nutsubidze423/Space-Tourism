@@ -44,25 +44,34 @@ main.tech-hero {
     background-image: url('/assets/assets/technology/background-technology-mobile.jpg');
     background-position: center center;
     background-size: cover;
+    padding-top: 80px;
   }
   .hero-inner {
     flex-direction: column;
     text-align: center;
+    padding: 0 16px;
+    gap: 16px;
   }
   .tech-media img {
-    width: 300px;
+    width: 240px;
   }
   .tech-controls {
     justify-content: center;
+    gap: 10px;
   }
-  .eyebrow {
+  .tech-controls button {
+    width: 40px;
+    height: 40px;
     font-size: 12px;
   }
+  .eyebrow {
+    font-size: 10px;
+  }
   .hero-title {
-    font-size: 40px;
+    font-size: 28px;
   }
   .hero-desc {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 

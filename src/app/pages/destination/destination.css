@@ -104,30 +104,40 @@ main.destination-hero {
     background-image: url('/assets/assets/destination/background-destination-mobile.jpg');
     background-position: center center;
     background-size: cover;
+    padding-top: 80px;
   }
   .hero-inner {
     flex-direction: column;
     text-align: center;
+    padding: 0 16px;
+    gap: 24px;
+  }
+  .hero-copy {
+    margin: 0;
   }
   .dest-image img {
-    width: 180px;
-    margin: 24px auto 0 auto;
+    width: 150px;
+    margin: 12px auto 0 auto;
   }
   .dest-list-top {
     justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
   }
   .eyebrow {
-    font-size: 12px;
+    font-size: 10px;
+    margin-bottom: 8px;
   }
   .hero-title {
-    font-size: 40px;
+    font-size: 28px;
+    margin: 0 0 12px 0;
   }
   .hero-desc {
-    font-size: 14px;
+    font-size: 13px;
   }
   .dest-item {
-    font-size: 13px;
-    padding: 10px 14px;
+    font-size: 12px;
+    padding: 8px 12px;
   }
 }
 

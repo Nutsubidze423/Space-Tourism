@@ -76,21 +76,33 @@ main.contact-hero {
 }
 
 @media (max-width: 767px) {
+  main.contact-hero {
+    padding-top: 80px;
+  }
+  .hero-inner {
+    flex-direction: column;
+    padding: 0 16px;
+    gap: 24px;
+  }
+  .hero-copy {
+    margin: 0;
+  }
   .hero-title {
-    font-size: 40px;
+    font-size: 28px;
   }
   .hero-desc {
-    font-size: 14px;
+    font-size: 13px;
   }
   .eyebrow {
-    font-size: 12px;
+    font-size: 10px;
   }
   .form-group label {
-    font-size: 12px;
+    font-size: 11px;
   }
   .form-group input,
   .form-group textarea {
-    font-size: 14px;
+    font-size: 13px;
+    padding: 10px 12px;
   }
 }
 

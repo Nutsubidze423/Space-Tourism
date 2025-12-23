@@ -94,8 +94,8 @@ body {
 
 @media (max-width: 767px) {
   :root {
-    --eyebrow-size: 12px;
-    --hero-desc-size: 15px;
+    --eyebrow-size: 10px;
+    --hero-desc-size: 13px;
   }
 }
 

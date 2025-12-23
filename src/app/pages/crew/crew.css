@@ -75,41 +75,47 @@ main.crew-hero {
     background-image: url('/assets/assets/crew/background-crew-mobile.jpg');
     background-position: center center;
     background-size: cover;
+    padding-top: 80px;
   }
   .hero-inner {
     flex-direction: column;
     text-align: center;
+    padding: 24px 16px;
+    gap: 16px;
   }
   .crew-list {
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
     margin-left: 0;
   }
   .crew-list img {
-    width: 200px;
+    width: 160px;
   }
   .crew-photo img {
-    width: 200px !important;
+    width: 160px !important;
     height: auto !important;
     object-fit: contain;
   }
   .crew-header {
-    padding: 24px 0;
+    padding: 16px 0;
+  }
+  .crew-header .eyebrow {
+    font-size: 10px;
   }
   .eyebrow {
-    font-size: 12px;
+    font-size: 10px;
   }
   .hero-title {
-    font-size: 36px;
+    font-size: 28px;
   }
   .crew-role {
-    font-size: 13px;
+    font-size: 12px;
   }
   .crew-name {
-    font-size: 36px;
+    font-size: 28px;
   }
   .hero-desc {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
