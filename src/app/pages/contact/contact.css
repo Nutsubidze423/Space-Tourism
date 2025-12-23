@@ -75,6 +75,25 @@ main.contact-hero {
   font-weight: 700;
 }
 
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 40px;
+  }
+  .hero-desc {
+    font-size: 14px;
+  }
+  .eyebrow {
+    font-size: 12px;
+  }
+  .form-group label {
+    font-size: 12px;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+}
+
 .form-group input,
 .form-group textarea {
   background: rgba(255, 255, 255, 0.05);

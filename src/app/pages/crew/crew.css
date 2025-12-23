@@ -96,6 +96,21 @@ main.crew-hero {
   .crew-header {
     padding: 24px 0;
   }
+  .eyebrow {
+    font-size: 12px;
+  }
+  .hero-title {
+    font-size: 36px;
+  }
+  .crew-role {
+    font-size: 13px;
+  }
+  .crew-name {
+    font-size: 36px;
+  }
+  .hero-desc {
+    font-size: 14px;
+  }
 }
 
 .crew-list {

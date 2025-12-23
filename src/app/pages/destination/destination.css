@@ -116,6 +116,19 @@ main.destination-hero {
   .dest-list-top {
     justify-content: center;
   }
+  .eyebrow {
+    font-size: 12px;
+  }
+  .hero-title {
+    font-size: 40px;
+  }
+  .hero-desc {
+    font-size: 14px;
+  }
+  .dest-item {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
 }
 
 .hero-desc {

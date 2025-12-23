@@ -92,6 +92,13 @@ body {
   --transition-normal: 0.3s ease;
 }
 
+@media (max-width: 767px) {
+  :root {
+    --eyebrow-size: 12px;
+    --hero-desc-size: 15px;
+  }
+}
+
 .eyebrow {
   font-size: var(--eyebrow-size);
   letter-spacing: 2px;

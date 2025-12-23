@@ -55,6 +55,15 @@ main.tech-hero {
   .tech-controls {
     justify-content: center;
   }
+  .eyebrow {
+    font-size: 12px;
+  }
+  .hero-title {
+    font-size: 40px;
+  }
+  .hero-desc {
+    font-size: 14px;
+  }
 }
 
 .tech-controls {

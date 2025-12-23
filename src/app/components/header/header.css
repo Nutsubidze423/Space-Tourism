@@ -196,4 +196,13 @@ h1 {
   .header {
     height: 100px;
   }
+  a {
+    font-size: 14px;
+  }
+  .index {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 14px;
+  }
 }
