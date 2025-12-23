@@ -68,10 +68,11 @@ main.tech-hero {
     font-size: 10px;
   }
   .hero-title {
-    font-size: 28px;
+    font-size: 35px !important;
+    padding-top: 10px;
   }
   .hero-desc {
-    font-size: 13px;
+    font-size: 15px !important;
   }
 }
 
