@@ -1,13 +1,9 @@
-* {
-  background-color: transparent;
-  background-size: cover;
-}
 :host {
-  display: contents; /* Makes the app-header component wrapper invisible */
+  display: contents;
 }
 
 header {
-  background-color: transparent;
+  background-color: transparent !important;
   width: 100%;
 }
 
@@ -15,11 +11,9 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 136px;
+  height: 116px;
   position: relative;
-}
-body {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 #left {
   display: flex;
@@ -28,20 +22,20 @@ body {
   z-index: 2;
   position: absolute;
   left: 48px;
-  top: 24px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 #right {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 25px;
   margin-left: auto;
-  margin-right: 80px;
+  margin-right: 48px;
   height: 72px;
   padding: 0 20px;
   border-radius: 10px;
   box-shadow: none;
   position: relative;
-  /* removed all background, backdrop-filter, and pseudo-element styling */
 }
 a {
   flex-direction: row;
@@ -58,9 +52,9 @@ a {
   letter-spacing: 2px;
   text-decoration: none;
   gap: 10px;
+  transition: all 0.3s ease;
 }
 h1 {
-  /* legacy rule - headings inside nav were changed to .index spans; keep for safety */
   font-size: var(--font-size-desktop-text-preset-8, 16px);
 }
 .index {
@@ -69,7 +63,6 @@ h1 {
   margin-right: 6px;
 }
 #right > div {
-  /* Ensure each nav item spans the full height of the nav so the border sits at the bottom */
   height: 100%;
   display: flex;
   align-items: center;
@@ -80,32 +73,35 @@ h1 {
 #right > div::after {
   content: '';
   position: absolute;
-  /* subtle shorter underline that aligns with the text block */
   left: 14px;
   right: 14px;
   bottom: 0;
   height: 3px;
   background: transparent;
-  transition: background 0.18s ease, transform 0.18s ease, opacity 0.12s ease;
+  transition: background 0.25s ease, transform 0.25s ease, opacity 0.18s ease, box-shadow 0.25s ease;
   transform-origin: center;
-  transform: translateY(0);
+  transform: translateY(0) scaleX(0);
   opacity: 0;
+  box-shadow: none;
 }
 
 #right > div:hover::after,
 #right > div.active::after {
   background: rgb(255, 255, 255);
-  transform: translateY(0);
+  transform: translateY(0) scaleX(1);
   opacity: 1;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
-/* parent active state handled via ::after and link styles above */
-/* individual nav items use the shared rule above (#right > div) */
 
-/* Active state: the parent div receives `active` via routerLinkActive; underline handled by ::after */
+#right a {
+  padding: 6px 4px;
+}
 
-/* #c and #t share styles via #right > div above. No additional rules required. */
+#right > div.active a {
+  color: #fff;
+  font-weight: 700;
+}
 
-/* Hamburger (mobile) */
 .hamburger {
   display: none;
   background: transparent;
@@ -114,12 +110,14 @@ h1 {
   margin-right: 48px;
   z-index: 50;
 }
+
 .hamburger-box {
   width: 32px;
   height: 24px;
   display: inline-block;
   position: relative;
 }
+
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
@@ -131,20 +129,22 @@ h1 {
   position: absolute;
   transition: transform 0.18s ease, opacity 0.18s ease;
 }
+
 .hamburger-inner {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .hamburger-inner::before {
   content: '';
   top: -10px;
 }
+
 .hamburger-inner::after {
   content: '';
   top: 10px;
 }
 
-/* Mobile overlay */
 .mobile-overlay {
   position: fixed;
   inset: 0;
@@ -153,15 +153,17 @@ h1 {
   justify-content: flex-end;
   z-index: 40;
 }
+
 .mobile-nav {
   width: 260px;
-  background: transparent; /* make mobile nav background none */
+  background: transparent;
   backdrop-filter: none;
   padding: 48px 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .mobile-nav a {
   color: #fff;
   text-decoration: none;
@@ -169,19 +171,17 @@ h1 {
   letter-spacing: 2px;
 }
 
-/* tighten nav link styles */
-#right a {
-  padding: 6px 4px;
-}
-
-/* make active link more prominent */
-#right > div.active a {
-  color: #fff;
-  font-weight: 700;
+@media (max-width: 1024px) {
+  #right {
+    gap: 30px;
+    margin-right: 48px;
+  }
+  #left {
+    left: 40px;
+  }
 }
 
 @media (max-width: 767px) {
-  /* hide desktop pill nav and show hamburger */
   #right {
     display: none;
   }
@@ -190,6 +190,10 @@ h1 {
   }
   #left {
     left: 20px;
-    top: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .header {
+    height: 100px;
   }
 }

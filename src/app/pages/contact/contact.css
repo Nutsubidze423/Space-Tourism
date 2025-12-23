@@ -1,4 +1,4 @@
-main.destination-hero {
+main.contact-hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -20,132 +20,158 @@ main.destination-hero {
   animation: fadeIn 0.6s ease;
   margin: 0 auto;
 }
+
 .hero-copy {
   max-width: 540px;
   color: #fff;
   margin: 0 0 24px 0;
   animation: slideInLeft 0.8s ease 0.1s both;
 }
+
 .eyebrow {
   color: rgba(255, 255, 255, 0.75);
   letter-spacing: 2px;
   margin-bottom: 16px;
   animation: slideInLeft 0.8s ease 0.2s both;
 }
+
 .hero-title {
   font-family: 'Bellefair', serif;
-  font-size: 100px;
+  font-size: 60px;
   margin: 0 0 24px 0;
   letter-spacing: 4px;
   animation: slideInLeft 0.8s ease 0.3s both;
 }
+
 .hero-desc {
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
+  font-size: 15px;
   animation: slideInLeft 0.8s ease 0.4s both;
 }
-.dest-list {
+
+.contact-form-section {
+  max-width: 500px;
+  animation: slideInRight 0.8s ease 0.2s both;
+  min-height: 480px;
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-.dest-list-top {
-  display: flex;
-  flex-direction: row;
-  gap: 26px;
-  margin-bottom: 32px;
-  animation: slideInLeft 0.8s ease 0.5s both;
-}
-.dest-item {
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: 2px;
+  gap: 24px;
 }
 
-.dest-item {
-  background: transparent;
-  border: 0;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
   color: rgba(255, 255, 255, 0.75);
-  padding: 12px 18px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  padding: 12px 16px;
   border-radius: 6px;
   font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-.dest-item:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(8px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-}
-.dest-item.active {
-  color: #fff;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
-.dest-image img {
-  width: 480px;
-  display: block;
-  margin-left: 0;
-  animation: slideInRight 0.8s ease 0.2s both;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.submit-btn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn:active {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(0.98);
+}
+
+.success-message {
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.5);
+  border-radius: 6px;
+  color: #4caf50;
+  text-align: center;
+  animation: slideInLeft 0.5s ease;
+}
+
+.success-message p {
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  main.destination-hero {
+  main.contact-hero {
     background-image: url('/assets/assets/destination/background-destination-tablet.jpg');
     background-size: cover;
   }
+  
+  .hero-title {
+    font-size: 60px;
+  }
 }
+
 @media (max-width: 767px) {
-  main.destination-hero {
+  main.contact-hero {
     background-image: url('/assets/assets/destination/background-destination-mobile.jpg');
     background-position: center center;
     background-size: cover;
   }
+
   .hero-inner {
     flex-direction: column;
     text-align: center;
   }
-  .dest-image img {
-    width: 180px;
-    margin: 24px auto 0 auto;
-  }
-  .dest-list-top {
-    justify-content: center;
-  }
-}
 
-.hero-desc {
-  font-size: 18px;
-  max-width: 520px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-}
-
-@media (max-width: 1200px) {
-  .hero-copy {
-    font-size: 60px;
-  }
   .hero-title {
-    font-size: 60px;
+    font-size: 56px;
   }
-  .dest-image img {
-    width: 360px;
-    margin-left: 0;
-  }
-}
 
-@media (max-width: 1024px) {
-  .hero-copy {
-    font-size: 48px;
-  }
-  .hero-title {
-    font-size: 48px;
-  }
-  .dest-image img {
-    width: 300px;
+  .contact-form-section {
+    width: 100%;
+    max-width: 100%;
   }
 }

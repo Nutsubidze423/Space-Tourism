@@ -10,5 +10,3 @@ import { Header } from './components/header/header';
   styleUrls: ['./app.css'],
 })
 export class App {}
-
-// Application bootstrapping is handled in `src/main.ts` using `appConfig`.

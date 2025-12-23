@@ -1,0 +1,69 @@
+<main class="contact-hero">
+  <div class="hero-inner">
+    <section class="hero-copy">
+      <p class="eyebrow">რამე გაინტერესებთ?</p>
+      <h1 class="hero-title">დაგვიკავშირდით</h1>
+      <p class="hero-desc">
+        გაქვთ შეკითხვები ან გსურთ მეტი გაიგოთ ჩვენი კოსმოსური ტურიზმის გამოცდილების შესახებ? გამოგვიგზავნეთ შეტყობინება და ჩვენ რაც შეიძლება მალე დაგიკავშირდებით.
+      </p>
+    </section>
+
+    <section class="contact-form-section">
+      <form (ngSubmit)="submitForm()" class="contact-form">
+        <div class="form-group">
+          <label for="name">სახელი</label>
+          <input
+            type="text"
+            id="name"
+            [(ngModel)]="formData.name"
+            name="name"
+            required
+            placeholder="შეიყვანეთ თქვენი სახელი"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">მობილური</label>
+          <input
+            type="tel"
+            id="phone"
+            [(ngModel)]="formData.phone"
+            name="phone"
+            required
+            placeholder="შეიყვანეთ თქვენი მობილური"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">მეილი</label>
+          <input
+            type="email"
+            id="email"
+            [(ngModel)]="formData.email"
+            name="email"
+            required
+            placeholder="შეიყვანეთ თქვენი მეილი"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">შეტყობინება</label>
+          <textarea
+            id="message"
+            [(ngModel)]="formData.message"
+            name="message"
+            required
+            placeholder="შეიყვანეთ თქვენი შეტყობინება"
+            rows="5"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">შეტყობინების გაგზავნა</button>
+      </form>
+
+      <div *ngIf="submitted" class="success-message">
+        <p>მადლობა! ჩვენ მივიღეთ თქვენი შეტყობინება და მალე დაგიკავშირდებით.</p>
+      </div>
+    </section>
+  </div>
+</main>

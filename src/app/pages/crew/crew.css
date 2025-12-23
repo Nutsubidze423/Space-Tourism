@@ -1,39 +1,63 @@
 main.crew-hero {
-  min-height: 760px;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* remove bottom padding: keep top spacing only */
+  flex-direction: column;
   padding: 48px 0 0 0;
   background-image: url('/assets/assets/crew/background-crew-desktop.jpg');
   background-repeat: no-repeat;
-  /* reduce desktop zoom */
-  background-size: 100% auto;
-  background-position: center right;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
+
+.crew-header {
+  width: 100%;
+  text-align: center;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.crew-header .eyebrow {
+  margin: 0;
+  animation: fadeIn 0.6s ease;
+}
+
 .hero-inner {
   width: min(92%, 1200px);
   display: flex;
-  gap: 40px;
+  gap: 80px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  animation: fadeIn 0.6s ease;
+  margin: 0 auto;
+  flex: 1;
+  padding: 48px 0;
 }
 .hero-copy {
   max-width: 560px;
   color: #fff;
+  animation: slideInLeft 0.8s ease 0.1s both;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
 }
 .eyebrow {
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 16px;
+  animation: slideInLeft 0.8s ease 0.2s both;
 }
 .hero-title {
   font-family: 'Bellefair', serif;
   font-size: 64px;
   margin: 0 0 24px 0;
   letter-spacing: 1px;
+  animation: slideInLeft 0.8s ease 0.3s both;
 }
 .hero-desc {
   color: rgba(255, 255, 255, 0.85);
+  animation: slideInLeft 0.8s ease 0.4s both;
 }
 .crew-list img {
   width: 320px;
@@ -56,24 +80,44 @@ main.crew-hero {
     flex-direction: column;
     text-align: center;
   }
+  .crew-list {
+    flex-direction: column;
+    gap: 24px;
+    margin-left: 0;
+  }
   .crew-list img {
     width: 200px;
   }
+  .crew-photo img {
+    width: 200px !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+  .crew-header {
+    padding: 24px 0;
+  }
 }
 
-/* Crew specific controls and layout */
 .crew-list {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 40px;
+  gap: 100px;
+  animation: fadeIn 0.5s ease;
+  justify-content: center;
+  margin-left: 25px;
 }
 .crew-photo img {
   width: 540px;
+  height: 600px;
+  object-fit: cover;
   border-radius: 8px;
+  animation: slideInRight 0.6s ease 0.1s both;
 }
 .crew-text {
   max-width: 520px;
   color: #fff;
+  animation: slideInLeft 0.6s ease 0.1s both;
 }
 .crew-role {
   color: rgba(255, 255, 255, 0.6);
@@ -92,18 +136,35 @@ main.crew-hero {
 .crew-controls {
   display: flex;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 8px;
+  animation: slideInLeft 0.8s ease 0.5s both;
+  justify-content: flex-start;
 }
 .crew-controls button {
-  width: 12px;
-  height: 12px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 0;
-  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
   cursor: pointer;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.crew-controls button:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 .crew-controls button.active {
+  border-color: #fff;
   background: #fff;
+  color: #0b0d17;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 1024px) {
@@ -118,5 +179,8 @@ main.crew-hero {
   }
   .crew-list {
     flex-direction: column;
+  }
+  .crew-controls {
+    justify-content: center;
   }
 }

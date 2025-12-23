@@ -18,27 +18,27 @@ interface CrewMember {
 export class Crew {
   members: CrewMember[] = [
     {
-      name: 'DOUGLAS HURLEY',
-      role: 'COMMANDER',
-      bio: 'Douglas Gerald Hurley is an American engineer and former Marine Corps pilot. He launched into space as commander of the Crew Dragon Demo-2 mission.',
+      name: 'დაგლას ჰარლი',
+      role: 'მეთაური',
+      bio: 'დუგლას ჯერალდ ჰარლი ამერიკელი ინჟინერი და საზღვაო ქვეითთა ​​​​კორპუსის ყოფილი პილოტია. ის კოსმოსში Crew Dragon Demo-2 მისიის მეთაურად გაფრინდა.',
       image: '/assets/assets/crew/image-douglas-hurley.png',
     },
     {
-      name: 'MARK SHUTTLEWORTH',
-      role: 'PILOT',
-      bio: 'Mark Richard Shuttleworth is the founder and CEO of Canonical. He became the first South African to travel to space as a space tourist.',
+      name: 'მარკ შატლუორთი',
+      role: 'პილოტი',
+      bio: 'მარკ რიჩარდ შატლუორთი Canonical-ის დამფუძნებელი და აღმასრულებელი დირექტორია. ის პირველი სამხრეთ აფრიკელი გახდა, რომელმაც კოსმოსური ტურისტის სტატუსით კოსმოსში იმოგზაურა.',
       image: '/assets/assets/crew/image-mark-shuttleworth.png',
     },
     {
-      name: 'VICTOR GLOVER',
-      role: 'MISSION SPECIALIST',
-      bio: 'Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station.',
+      name: 'ვიქტორ გლოვერი',
+      role: 'მისიის სპეციალისტი',
+      bio: 'SpaceX-ის Crew Dragon-ის პირველი ოპერატიული ფრენის პილოტი საერთაშორისო კოსმოსურ სადგურზე.',
       image: '/assets/assets/crew/image-victor-glover.png',
     },
     {
-      name: 'ANOUSHEH ANSARI',
-      role: 'FLIGHT ENGINEER',
-      bio: 'Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems; she was the first female private space explorer.',
+      name: 'ანუშე ანსარი',
+      role: 'ფრენის ინჟინერი',
+      bio: 'ანუშე ანსარი ირანელი-ამერიკელი ინჟინერი და Prodea Systems-ის თანადამფუძნებელია; ის იყო პირველი ქალი კერძო კოსმოსური მკვლევარი.',
       image: '/assets/assets/crew/image-anousheh-ansari.png',
     },
   ];

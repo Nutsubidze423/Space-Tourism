@@ -21,30 +21,36 @@
       <div id="h" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a routerLink="/" (click)="closeMenu()">
           <span class="index">00</span>
-          HOME
+          მთავარი
         </a>
       </div>
       <div id="d" routerLinkActive="active">
         <a routerLink="/destination" (click)="closeMenu()">
           <span class="index">01</span>
-          DESTINATION
+          დანიშნულება
         </a>
       </div>
       <div id="c" routerLinkActive="active">
         <a routerLink="/crew" (click)="closeMenu()">
           <span class="index">02</span>
-          CREW
+          ეკიპაჟი
         </a>
       </div>
       <div id="t" routerLinkActive="active">
         <a routerLink="/tech" (click)="closeMenu()">
           <span class="index">03</span>
-          TECHNOLOGIES
+          ტექნოლოგიები
+        </a>
+      </div>
+      <div id="ct" routerLinkActive="active">
+        <a routerLink="/contact" (click)="closeMenu()">
+          <span class="index">04</span>
+          კონტაქტი
         </a>
       </div>
     </div>
 
-    <!-- Mobile overlay menu -->
+    
     <div class="mobile-overlay" *ngIf="mobileOpen" (click)="closeMenu()">
       <nav class="mobile-nav" (click)="$event.stopPropagation()">
         <a
@@ -53,16 +59,19 @@
           [routerLinkActiveOptions]="{ exact: true }"
           (click)="closeMenu()"
         >
-          <span class="index">00</span> HOME
+          <span class="index">00</span> მთავარი
         </a>
         <a routerLink="/destination" routerLinkActive="active" (click)="closeMenu()">
-          <span class="index">01</span> DESTINATION
+          <span class="index">01</span> დანიშნულება
         </a>
         <a routerLink="/crew" routerLinkActive="active" (click)="closeMenu()">
-          <span class="index">02</span> CREW
+          <span class="index">02</span> ეკიპაჟი
         </a>
         <a routerLink="/tech" routerLinkActive="active" (click)="closeMenu()">
-          <span class="index">03</span> TECHNOLOGIES
+          <span class="index">03</span> ტექნოლოგიები
+        </a>
+        <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+          <span class="index">04</span> კონტაქტი
         </a>
       </nav>
     </div>

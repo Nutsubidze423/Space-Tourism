@@ -1,16 +1,7 @@
 <main class="destination-hero">
   <div class="hero-inner">
     <section class="hero-copy">
-      <p class="eyebrow">PICK YOUR DESTINATION</p>
-      <h1 class="hero-title">MOON</h1>
-      <p class="hero-desc">
-        See our planets and moons. Choose a destination to get detailed info about travel time and
-        required equipment.
-      </p>
-    </section>
-
-    <section class="hero-media">
-      <nav class="dest-list">
+      <nav class="dest-list-top">
         <button
           *ngFor="let d of destinations; let i = index"
           (click)="select(i)"
@@ -20,7 +11,14 @@
           {{ d.short }}
         </button>
       </nav>
+      <p class="eyebrow">აირჩიეთ დანიშნულება</p>
+      <h1 class="hero-title">{{ destinations[selected].name }}</h1>
+      <p class="hero-desc">
+        {{ destinations[selected].description }}
+      </p>
+    </section>
 
+    <section class="hero-media">
       <div class="dest-image">
         <img [src]="destinations[selected].image" [alt]="destinations[selected].name" />
       </div>

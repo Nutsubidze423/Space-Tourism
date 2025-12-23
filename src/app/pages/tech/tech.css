@@ -1,15 +1,15 @@
 main.tech-hero {
-  min-height: 760px;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* remove bottom padding: keep top spacing only */
   padding: 48px 0 0 0;
   background-image: url('/assets/assets/technology/background-technology-desktop.jpg');
   background-repeat: no-repeat;
-  /* reduce desktop zoom */
-  background-size: 100% auto;
-  background-position: center right;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 .hero-inner {
   width: min(92%, 1200px);
@@ -17,14 +17,21 @@ main.tech-hero {
   gap: 40px;
   align-items: center;
   justify-content: space-between;
+  animation: fadeIn 0.6s ease;
+  margin: 0 auto;
 }
 .hero-copy {
   max-width: 560px;
   color: #fff;
+  animation: slideInLeft 0.8s ease 0.1s both;
+}
+.eyebrow {
+  animation: slideInLeft 0.8s ease 0.15s both;
 }
 .tech-media img {
-  width: 420px;
+  width: 650px;
   border-radius: 8px;
+  animation: slideInRight 0.8s ease 0.2s both;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
   main.tech-hero {
@@ -43,15 +50,18 @@ main.tech-hero {
     text-align: center;
   }
   .tech-media img {
-    width: 240px;
+    width: 300px;
+  }
+  .tech-controls {
+    justify-content: center;
   }
 }
 
-/* tech controls styling */
 .tech-controls {
   display: flex;
   gap: 12px;
   margin-top: 24px;
+  animation: slideInLeft 0.8s ease 0.4s both;
 }
 .tech-controls button {
   width: 48px;
@@ -62,29 +72,38 @@ main.tech-hero {
   color: #fff;
   cursor: pointer;
   font-family: 'Barlow Condensed', sans-serif;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.tech-controls button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 .tech-controls button.active {
   background: #fff;
   color: #0b0d17;
   font-weight: 700;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 1024px) {
   .tech-media img {
-    width: 320px;
+    width: 380px;
   }
 }
 
-/* typography for tech page */
 .hero-title {
   font-family: 'Bellefair', serif;
   font-size: 68px;
   letter-spacing: 3px;
   margin: 0 0 18px 0;
+  animation: slideInLeft 0.8s ease 0.2s both;
 }
 .hero-desc {
   font-size: 18px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
   max-width: 520px;
+  animation: slideInLeft 0.8s ease 0.3s both;
 }

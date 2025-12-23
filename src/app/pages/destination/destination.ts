@@ -19,28 +19,28 @@ import { RouterLink } from '@angular/router';
 export class Destination {
   destinations: DestinationItem[] = [
     {
-      name: 'MOON',
-      short: 'MOON',
+      name: 'მთვარე',
+      short: 'მთვარე',
       description:
-        'See our planets and moons. Choose a destination to get detailed info about travel time and required equipment.',
+        'დედამიწის ბუნებრივი თანამგზავრი.',
       image: '/assets/assets/destination/image-moon.png',
     },
     {
-      name: 'MARS',
-      short: 'MARS',
-      description: 'The red planet awaits. Learn about travel time and conditions on Mars.',
+      name: 'მარსი',
+      short: 'მარსი',
+      description: 'მეოთხე პლანეტა მზის სისტემაში ცნობილი როგორც წითელი პლანეტა.',
       image: '/assets/assets/destination/image-mars.png',
     },
     {
-      name: 'EUROPA',
-      short: 'EUROPA',
-      description: 'Explore Europa and its icy surface.',
+      name: 'ევროპა',
+      short: 'ევროპა',
+      description: ' პლანეტა იუპიტერის ბუნებრივი თანამგზავრი.',
       image: '/assets/assets/destination/image-europa.png',
     },
     {
-      name: 'TITAN',
-      short: 'TITAN',
-      description: "Visit Titan's lakes and nitrogen-rich atmosphere.",
+      name: 'ტიტანი',
+      short: 'ტიტანი',
+      description: " სატურნის ყველაზე დიდი თანამგზავრი.",
       image: '/assets/assets/destination/image-titan.png',
     },
   ];

@@ -18,23 +18,23 @@ interface TechItem {
 export class Tech {
   items: TechItem[] = [
     {
-      name: 'LAUNCH VEHICLE',
+      name: 'გაშვების მანქანა',
       description:
-        'A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth into space.',
+        'გამშვები მოწყობილობა ან გადამზიდავი რაკეტა არის რაკეტსაწინააღმდეგო მოწყობილობა, რომელიც გამოიყენება დედამიწიდან კოსმოსში ტვირთის გადასატანად. ეს არის გაშვების სისტემა.',
       imageLandscape: '/assets/assets/technology/image-launch-vehicle-landscape.jpg',
       imagePortrait: '/assets/assets/technology/image-launch-vehicle-portrait.jpg',
     },
     {
-      name: 'SPACEPORT',
+      name: 'კოსმოსური პორტი',
       description:
-        'A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to seaport for ships or airport for aircraft.',
+        'კოსმოსური პორტი ან კოსმოდრომი არის ადგილი კოსმოსური ხომალდების გაშვების (ან მიღების)თვის, ანალოგიურად გემებისთვის საზღვაო პორტისა ან თვითმფრინავებისთვის აეროპორტისა.',
       imageLandscape: '/assets/assets/technology/image-spaceport-landscape.jpg',
       imagePortrait: '/assets/assets/technology/image-spaceport-portrait.jpg',
     },
     {
-      name: 'SPACE CAPSULE',
+      name: 'კოსმოსური კაფსულა',
       description:
-        "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings.",
+        "კოსმოსური კაფსულა არის ხშირად ეკიპაჟით დაკომპლექტებული კოსმოსური ხომალდი, რომელიც იყენებს ბლაგვი კორპუსის მქონე უკან შესვლის კაფსულას დედამიწის ატმოსფეროში ფრთების გარეშე დასაბრუნებლად.",
       imageLandscape: '/assets/assets/technology/image-space-capsule-landscape.jpg',
       imagePortrait: '/assets/assets/technology/image-space-capsule-portrait.jpg',
     },
