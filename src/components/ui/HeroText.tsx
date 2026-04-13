@@ -2,7 +2,6 @@ export default function HeroText() {
   return (
     <div
       style={{
-        position: "fixed",
         position: "absolute",
         top: "50%",
         left: "50%",

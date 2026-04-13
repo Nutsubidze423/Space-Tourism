@@ -41,17 +41,6 @@ export default function LuxuryButton({
       });
     };
 
-    const handleMouseLeave = () => {
-      gsap.to(btn, {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 0.5,
-        ease: "elastic.out(1, 0.3)",
-      });
-      setIsHovered(false);
-    };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [isHovered]);

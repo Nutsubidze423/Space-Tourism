@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { Effect } from 'postprocessing';
 import { Uniform } from 'three';
 
@@ -48,7 +47,7 @@ class GravitationalLensingEffect extends Effect {
     eventHorizonRadius = 0.1,
   } = {}) {
     super('GravitationalLensingEffect', fragmentShader, {
-      uniforms: new Map([
+      uniforms: new Map<string, Uniform<unknown>>([
         ['uBlackHolePosition', new Uniform(blackHolePosition)],
         ['uLensingStrength', new Uniform(lensingStrength)],
         ['uEventHorizonRadius', new Uniform(eventHorizonRadius)],

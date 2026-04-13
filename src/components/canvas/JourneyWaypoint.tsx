@@ -11,7 +11,7 @@ interface WaypointProps {
 export default function JourneyWaypoint({ type, active }: WaypointProps) {
   const meshRef = useRef<THREE.Mesh>(null);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.01;
       meshRef.current.rotation.z += 0.005;

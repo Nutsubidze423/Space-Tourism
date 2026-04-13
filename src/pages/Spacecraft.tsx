@@ -38,7 +38,7 @@ export default function Spacecraft() {
         <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 8], fov: 50 }}>
           <color attach="background" args={["#050505"]} />
           <Suspense fallback={null}>
-            <Stage environment="city" intensity={0.5} contactShadow={false}>
+            <Stage environment="city" intensity={0.5}>
               <SpacecraftModel
                 key={activeShip.id} // Re-mounts on change for animation
                 color={activeShip.color}

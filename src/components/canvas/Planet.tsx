@@ -13,7 +13,7 @@ export default function Planet({ data, onClick, isSelected }: PlanetProps) {
   const meshRef = useRef<THREE.Mesh>(null);
   const orbitRef = useRef<THREE.Group>(null);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (meshRef.current) {
       // Planet rotation
       meshRef.current.rotation.y += data.rotationSpeed;
