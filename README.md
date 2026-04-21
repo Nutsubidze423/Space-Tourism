@@ -1,160 +1,69 @@
-# 🌌 EVENT HORIZON - Award-Winning Space Tourism Website
+<div align="center">
 
-> An immersive, interactive 3D space experience built with React Three Fiber
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2a1a,100:0f3d0f&height=180&section=header&text=EkkoShop&fontSize=42&fontColor=e6edf3&fontAlignY=40&desc=Full-stack%20tech%20e-commerce%20built%20with%20Next.js&descAlignY=60&descColor=7d8590" />
 
-![Event Horizon](https://img.shields.io/badge/Status-Live-success)
-![React](https://img.shields.io/badge/React-18-blue)
-![Three.js](https://img.shields.io/badge/Three.js-Latest-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-0d1117?style=for-the-badge&logo=typescript&logoColor=58a6ff)
+![Next.js](https://img.shields.io/badge/Next.js-0d1117?style=for-the-badge&logo=nextdotjs&logoColor=e6edf3)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-0d1117?style=for-the-badge&logo=tailwindcss&logoColor=06b6d4)
+![Zustand](https://img.shields.io/badge/Zustand-0d1117?style=for-the-badge&logo=react&logoColor=f78510)
 
-## ✨ Features
-
-### 🎨 Visual Excellence
-
-- **Photorealistic Black Hole** with custom GLSL shaders
-- **Dynamic Accretion Disk** with turbulent noise and color gradients
-- **8,000+ Star Particle System** with realistic depth
-- **Bloom Post-Processing** for ethereal glow effects
-- **Glass-morphism UI** with backdrop blur
-- **Premium Color Palette** - Deep blacks, cosmic blues, electric accents
-
-### 🎭 Interactive Elements
-
-- **Mouse-Responsive Black Hole** - Disk responds to cursor movement
-- **Auto-Rotating Camera** with smooth orbital controls
-- **Hover Effects** on all interactive elements
-- **Gradient Text Animations** with shimmer effects
-- **Magnetic Button Interactions** with glow on hover
-
-### 🚀 Technical Highlights
-
-- **React Three Fiber** for declarative 3D
-- **Custom GLSL Shaders** for the accretion disk
-- **Procedural Noise** (FBM) for realistic turbulence
-- **Additive Blending** for luminous effects
-- **60 FPS Performance** with optimized rendering
-- **Hot Module Replacement** for instant updates
-
-## 🎯 Current Implementation
-
-### Homepage - Black Hole Spectacle ✅
-
-- ✅ Massive photorealistic black hole
-- ✅ Glowing accretion disk (oranges, blues, whites)
-- ✅ Smooth rotation animation
-- ✅ Particle starfield (8,000 stars)
-- ✅ Dynamic lighting with point light at singularity
-- ✅ Mouse parallax effect
-- ✅ Premium glassmorphism navigation
-- ✅ Hero text with gradient animation
-- ✅ Interactive CTA buttons with hover effects
-- ✅ Bloom post-processing
-- ✅ Scroll indicator
-
-### Coming Next 🚧
-
-- [ ] Gravitational lensing shader effect
-- [ ] Particle streams into event horizon
-- [ ] Scroll-triggered camera zoom
-- [ ] Destinations page (Solar System)
-- [ ] Spacecraft showcase
-- [ ] Crew page
-- [ ] Journey timeline
-- [ ] Booking system
-
-## 🛠️ Tech Stack
-
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool & dev server
-- **Three.js** - 3D rendering engine
-- **React Three Fiber** - React renderer for Three.js
-- **@react-three/drei** - Useful helpers
-- **@react-three/postprocessing** - Post-processing effects
-- **GSAP** - Premium animations (planned)
-- **Lenis** - Smooth scrolling (planned)
-
-## 🎨 Design System
-
-### Colors
-
-```css
---c-bg: #0a0a0a /* Deep black */ --c-bg-secondary: #1a1f3a /* Cosmic blue */ --c-bg-tertiary: #2d1b4e /* Deep purple */ --c-accent-blue: #00d4ff /* Electric blue */ --c-accent-gold: #ffd700 /* Golden */ --c-accent-green: #00ff88 /* Aurora green */ --c-accent-orange: #ff6600 /* Hot orange */;
-```
-
-### Typography
-
-- **Headings**: Syncopate, Orbitron (futuristic, bold)
-- **Body**: Inter (clean, readable)
-
-## 🚀 Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-Visit `http://localhost:5173` to see the experience.
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── canvas/          # 3D components
-│   │   ├── BlackHole.tsx
-│   │   └── StarField.tsx
-│   ├── ui/              # UI components
-│   │   ├── Navbar.tsx
-│   │   └── HeroText.tsx
-│   └── layout/
-│       └── SmoothScroll.tsx
-├── shaders/
-│   └── BlackHoleShader.ts  # Custom GLSL shaders
-├── styles/
-│   └── tokens.css       # Design tokens
-├── App.tsx              # Main app component
-└── main.tsx             # Entry point
-```
-
-## 🎯 Performance
-
-- **60 FPS** on modern hardware
-- **Optimized shaders** with efficient noise functions
-- **Frustum culling** for off-screen objects
-- **Additive blending** for performance
-- **Lazy loading** ready for future assets
-
-## 🌟 Inspiration
-
-This project draws inspiration from:
-
-- SpaceX website aesthetics
-- Apple product page interactions
-- Awwwards winning sites (bruno-simon.com)
-- AAA video game UI quality
-- Museum-quality interactive experiences
-
-## 📝 License
-
-MIT
-
-## 🙏 Acknowledgments
-
-- Three.js community
-- React Three Fiber team
-- Procedural noise techniques from IQ/Shadertoy
+</div>
 
 ---
 
-**Made with ❤️ and a passion for space exploration**
+## What is this?
 
-🚀 **Event Horizon** - Where reality bends
+EkkoShop is a tech-focused e-commerce storefront built with a modern React stack. It features a full product browsing experience, cart management powered by Zustand, and a clean responsive UI — with a backend in progress.
+
+## Features
+
+- **Product catalog** — browsable tech product listings with filtering
+- **Cart management** — persistent cart state via Zustand
+- **Custom hooks** — reusable logic abstracted into `/hooks`
+- **Utility layer** — shared helpers and config in `/lib`
+- **Responsive UI** — mobile-first layout with Tailwind CSS
+- **App Router** — built on Next.js 14 App Router architecture
+
+## Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| State Management | Zustand |
+| Deployment | Vercel (frontend) |
+
+## Project Structure
+
+```
+EkkoShop/
+├── app/          # Next.js App Router pages and layouts
+├── components/   # Reusable UI components
+├── hooks/        # Custom React hooks
+├── lib/          # Utilities and shared config
+├── store/        # Zustand store (cart, UI state)
+```
+
+## Getting Started
+
+```bash
+git clone https://github.com/Nutsubidze423/EkkoShop.git
+cd EkkoShop
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to run it locally.
+
+> **Note:** Backend is currently in development. Some features require a running API to function fully.
+
+---
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/demetre-nutsubidze/">
+    <img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" />
+  </a>
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3d0f,50:1a2a1a,100:0d1117&height=100&section=footer" />
