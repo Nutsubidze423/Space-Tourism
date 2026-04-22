@@ -1,11 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2a1a,100:0f3d0f&height=180&section=header&text=EkkoShop&fontSize=42&fontColor=e6edf3&fontAlignY=40&desc=Full-stack%20tech%20e-commerce%20built%20with%20Next.js&descAlignY=60&descColor=7d8590" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0a1f2e,100:020617&height=180&section=header&text=Space%20Tourism&fontSize=42&fontColor=e6edf3&fontAlignY=40&desc=3D%20interactive%20space%20experience&descAlignY=60&descColor=7d8590" />
 
-![TypeScript](https://img.shields.io/badge/TypeScript-0d1117?style=for-the-badge&logo=typescript&logoColor=58a6ff)
-![Next.js](https://img.shields.io/badge/Next.js-0d1117?style=for-the-badge&logo=nextdotjs&logoColor=e6edf3)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-0d1117?style=for-the-badge&logo=tailwindcss&logoColor=06b6d4)
-![Zustand](https://img.shields.io/badge/Zustand-0d1117?style=for-the-badge&logo=react&logoColor=f78510)
+![Three.js](https://img.shields.io/badge/Three.js-0d1117?style=for-the-badge&logo=three.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-0d1117?style=for-the-badge&logo=javascript&logoColor=f7df1e)
+![CSS3](https://img.shields.io/badge/CSS3-0d1117?style=for-the-badge&logo=css3&logoColor=1572b6)
 
 </div>
 
@@ -13,50 +12,66 @@
 
 ## What is this?
 
-EkkoShop is a tech-focused e-commerce storefront built with a modern React stack. It features a full product browsing experience, cart management powered by Zustand, and a clean responsive UI — with a backend in progress.
+Space Tourism is a 3D interactive web experience that simulates space exploration through immersive visuals and real-time rendering. The project focuses on combining UI with 3D environments to create a more engaging, cinematic browsing experience.
 
 ## Features
 
-- **Product catalog** — browsable tech product listings with filtering
-- **Cart management** — persistent cart state via Zustand
-- **Custom hooks** — reusable logic abstracted into `/hooks`
-- **Utility layer** — shared helpers and config in `/lib`
-- **Responsive UI** — mobile-first layout with Tailwind CSS
-- **App Router** — built on Next.js 14 App Router architecture
+- **3D environments** — real-time rendered scenes using Three.js
+- **Interactive camera movement** — dynamic perspective and navigation
+- **Immersive UI overlay** — interface layered over 3D scenes
+- **Smooth transitions** — scene changes and animations
+- **Responsive experience** — adapts across screen sizes
+- **Modular structure** — separation between rendering, logic, and UI
 
 ## Tech Stack
 
 | Layer | Tech |
 |-------|------|
-| Framework | Next.js 14 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS |
-| State Management | Zustand |
-| Deployment | Vercel (frontend) |
+| 3D Rendering | Three.js |
+| Language | JavaScript |
+| Styling | CSS3 |
+| Structure | HTML5 |
 
 ## Project Structure
 
 ```
-EkkoShop/
-├── app/          # Next.js App Router pages and layouts
-├── components/   # Reusable UI components
-├── hooks/        # Custom React hooks
-├── lib/          # Utilities and shared config
-├── store/        # Zustand store (cart, UI state)
+Space-Tourism/
+├── src/
+│   ├── scenes/        # 3D scenes and objects
+│   ├── components/    # UI elements
+│   ├── utils/         # helpers and config
+│   ├── main.js        # entry point
+├── public/            # assets (textures, models)
+├── styles/            # CSS
 ```
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/Nutsubidze423/EkkoShop.git
-cd EkkoShop
+git clone https://github.com/Nutsubidze423/Space-Tourism.git
+cd Space-Tourism
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to run it locally.
+---
 
-> **Note:** Backend is currently in development. Some features require a running API to function fully.
+## Key Focus
+
+- Building **3D web experiences** with real-time rendering
+- Combining **UI + WebGL environments**
+- Creating **cinematic, interactive interfaces**
+- Exploring **performance constraints in browser-based 3D**
+
+---
+
+## Roadmap
+
+- Add advanced lighting and shaders
+- Optimize performance (FPS, asset loading)
+- Improve camera controls and interaction depth
+- Add sound design for immersion
+- Deploy fully optimized production build
 
 ---
 
@@ -66,4 +81,4 @@ Open [http://localhost:3000](http://localhost:3000) to run it locally.
   </a>
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3d0f,50:1a2a1a,100:0d1117&height=100&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:0a1f2e,100:0d1117&height=100&section=footer" />
