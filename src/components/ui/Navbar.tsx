@@ -8,7 +8,6 @@ export default function Navbar() {
     { name: "DESTINATIONS", path: "/destinations" },
     { name: "SPACECRAFT", path: "/spacecraft" },
     { name: "CREW", path: "/crew" },
-    { name: "JOURNEY", path: "/journey" },
     { name: "BOOK", path: "/book" },
   ];
 

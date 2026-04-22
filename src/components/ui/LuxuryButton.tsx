@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 
 interface LuxuryButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,54 +19,21 @@ export default function LuxuryButton({
   const btnRef = useRef<HTMLButtonElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Initialize sound (optional procedural click sound can be added later)
-  // For now simple magnetic effect
-
-  useEffect(() => {
-    const btn = btnRef.current;
-    if (!btn) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isHovered) return;
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      // Magnetic pull effect
-      gsap.to(btn, {
-        x: x * 0.3,
-        y: y * 0.3,
-        duration: 0.5,
-        ease: "power2.out",
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [isHovered]);
-
   const handleMouseEnter = () => {
     setIsHovered(true);
-    gsap.to(btnRef.current, {
-      scale: 1.05,
-      duration: 0.3,
-      ease: "power2.out",
-    });
-    // Play subtle hover sound if implementation exists
+    gsap.to(btnRef.current, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    gsap.to(btnRef.current, { scale: 1, duration: 0.3, ease: "power2.out" });
   };
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // Click micro-animation
-    gsap.to(btnRef.current, {
-      scale: 0.95,
-      duration: 0.1,
-      yoyo: true,
-      repeat: 1,
-    });
+    gsap.to(btnRef.current, { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 });
     if (onClick) onClick(e);
   };
 
-  // Styles based on variant
   const getVariantStyles = () => {
     switch (variant) {
       case "primary":
@@ -99,7 +66,7 @@ export default function LuxuryButton({
     <button
       ref={btnRef}
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={() => setIsHovered(false)} // Cleanup handled in effect for magnet reset
+      onMouseLeave={handleMouseLeave}
       onClick={handleClick}
       style={{
         position: "relative",
@@ -111,9 +78,8 @@ export default function LuxuryButton({
         fontFamily: "var(--font-tech), sans-serif",
         cursor: "pointer",
         backdropFilter: "blur(10px)",
-        borderRadius: "2px", // Sharp luxury edges
-        transition:
-          "color 0.3s, background 0.3s, box-shadow 0.3s, border-color 0.3s",
+        borderRadius: "2px",
+        transition: "color 0.3s, background 0.3s, box-shadow 0.3s, border-color 0.3s",
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
@@ -124,7 +90,6 @@ export default function LuxuryButton({
       }}
       {...props}
     >
-      {/* Glow effect container */}
       <div
         style={{
           position: "absolute",
@@ -132,13 +97,11 @@ export default function LuxuryButton({
           left: "-100%",
           width: "100%",
           height: "100%",
-          background:
-            "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
+          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
           transform: isHovered ? "translateX(200%)" : "translateX(0)",
           transition: "transform 0.6s ease-in-out",
         }}
       />
-
       {children}
       {icon && <span style={{ fontSize: "1.2em" }}>{icon}</span>}
     </button>

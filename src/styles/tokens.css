@@ -54,8 +54,7 @@ body {
   background-color: var(--c-bg);
   color: var(--c-text);
   font-family: var(--font-body);
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

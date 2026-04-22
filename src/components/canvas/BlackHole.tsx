@@ -35,17 +35,15 @@ export default function BlackHole() {
     }
   });
 
-  // Create custom ring geometry without seam
   const ringGeometry = useMemo(() => {
-    const geometry = new THREE.RingGeometry(1.6, 5.5, 512, 8, 0, Math.PI * 2);
-    return geometry;
+    return new THREE.RingGeometry(1.6, 5.5, 256, 4, 0, Math.PI * 2);
   }, []);
 
   return (
     <group ref={groupRef} rotation={[0.2, 0, 0.3]} position={[0, 0, 0]}>
-      {/* Enhanced Event Horizon */}
+      {/* Event Horizon */}
       <mesh ref={sphereRef}>
-        <sphereGeometry args={[1.5, 128, 128]} />
+        <sphereGeometry args={[1.5, 64, 64]} />
         <meshStandardMaterial
           color="#000000"
           roughness={0.9}
@@ -55,18 +53,14 @@ export default function BlackHole() {
         />
       </mesh>
 
-      {/* Subtle inner shadow ring */}
+      {/* Inner shadow ring */}
       <mesh>
-        <sphereGeometry args={[1.52, 128, 128]} />
+        <sphereGeometry args={[1.52, 32, 32]} />
         <meshBasicMaterial color="#000000" transparent opacity={0.3} />
       </mesh>
 
-      {/* Accretion Disk - Custom geometry */}
-      <mesh
-        ref={meshRef}
-        rotation={[-Math.PI / 2, 0, 0]}
-        geometry={ringGeometry}
-      >
+      {/* Accretion Disk */}
+      <mesh ref={meshRef} rotation={[-Math.PI / 2, 0, 0]} geometry={ringGeometry}>
         <shaderMaterial
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
@@ -80,7 +74,7 @@ export default function BlackHole() {
 
       {/* Inner glow */}
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[1.4, 1.7, 256]} />
+        <ringGeometry args={[1.4, 1.7, 128]} />
         <meshBasicMaterial
           color="#ff3300"
           transparent
@@ -89,16 +83,6 @@ export default function BlackHole() {
           side={THREE.DoubleSide}
         />
       </mesh>
-
-      {/* Atmospheric glow */}
-      <sprite scale={[16, 16, 1]}>
-        <spriteMaterial
-          color="#001122"
-          blending={THREE.AdditiveBlending}
-          transparent
-          opacity={0.15}
-        />
-      </sprite>
     </group>
   );
 }
