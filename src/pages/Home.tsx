@@ -26,7 +26,11 @@ export default function Home() {
   const uiRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Initial delay for black hole reveal, then fade in UI
+    document.body.style.minHeight = "300vh";
+    return () => { document.body.style.minHeight = ""; };
+  }, []);
+
+  useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         uiRef.current,
@@ -35,7 +39,7 @@ export default function Home() {
           opacity: 1,
           y: 0,
           duration: 2,
-          delay: 2.5, // 2.5s delay to show black hole first
+          delay: 2.5,
           ease: "power2.out",
         },
       );
@@ -46,7 +50,7 @@ export default function Home() {
   return (
     <>
       {/* UI Container with delayed entry */}
-      <div ref={uiRef} style={{ position: "relative", zIndex: 10, opacity: 0 }}>
+      <div ref={uiRef} style={{ position: "fixed", inset: 0, zIndex: 10, opacity: 0, pointerEvents: "none" }}>
         <Navbar />
         <HeroText />
 

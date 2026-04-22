@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Environment, Float, Stars } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { Suspense, useState } from "react";
 import FloatingHelmet from "../components/canvas/FloatingHelmet";
 import Navbar from "../components/ui/Navbar";
@@ -35,21 +36,25 @@ export default function Crew() {
               fade
               speed={1}
             />
-            <ambientLight intensity={0.2} />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            <pointLight
-              position={[-10, -10, -10]}
-              intensity={0.5}
-              color="#00d4ff"
-            />
+            <ambientLight intensity={0.06} />
+            {/* Key light */}
+            <directionalLight position={[5, 6, 4]} intensity={3} color="#d0e4ff" />
+            {/* Rim light — blue-cyan from behind */}
+            <pointLight position={[-6, 2, -5]} intensity={2} color="#00d4ff" />
+            {/* Fill from below */}
+            <pointLight position={[2, -4, 2]} intensity={0.5} color="#223355" />
 
-            <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-              <group position={[2, 0, 0]} rotation={[0, -0.5, 0]}>
+            <Float speed={1.2} rotationIntensity={0.35} floatIntensity={0.4}>
+              <group position={[2.2, 0, 0]} rotation={[0, -0.5, 0]}>
                 <FloatingHelmet />
               </group>
             </Float>
 
-            <Environment preset="city" />
+            <Environment preset="night" />
+
+            <EffectComposer>
+              <Bloom intensity={0.6} luminanceThreshold={0.4} luminanceSmoothing={0.9} height={300} />
+            </EffectComposer>
           </Suspense>
         </Canvas>
       </div>

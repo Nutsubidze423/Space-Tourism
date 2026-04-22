@@ -1,28 +1,36 @@
-import { useState } from "react";
 import Planet from "./Planet";
 import AsteroidBelt from "./AsteroidBelt";
 import { planetsData } from "../../data/planetsData";
-import PlanetCard from "../ui/PlanetCard";
 
-export default function SolarSystem() {
-  const [selectedPlanet, setSelectedPlanet] = useState<string | null>(null);
+interface SolarSystemProps {
+  onPlanetSelect: (name: string) => void;
+}
 
+export default function SolarSystem({ onPlanetSelect }: SolarSystemProps) {
   return (
     <>
-      {/* Sun */}
+      {/* Sun core */}
       <mesh>
         <sphereGeometry args={[2, 64, 64]} />
-        <meshBasicMaterial color="#FDB813" />
+        <meshBasicMaterial color="#ffe060" />
       </mesh>
-
-      {/* Sun glow */}
+      {/* Sun corona layers */}
       <mesh>
-        <sphereGeometry args={[2.5, 64, 64]} />
-        <meshBasicMaterial color="#FFA500" transparent opacity={0.3} />
+        <sphereGeometry args={[2.25, 32, 32]} />
+        <meshBasicMaterial color="#ffaa00" transparent opacity={0.35} depthWrite={false} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[2.7, 32, 32]} />
+        <meshBasicMaterial color="#ff6600" transparent opacity={0.12} depthWrite={false} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[3.5, 32, 32]} />
+        <meshBasicMaterial color="#ff3300" transparent opacity={0.04} depthWrite={false} />
       </mesh>
 
-      {/* Point light from sun */}
-      <pointLight position={[0, 0, 0]} intensity={2} color="#FDB813" />
+      {/* Sun light sources */}
+      <pointLight position={[0, 0, 0]} intensity={4} color="#fff5e0" distance={600} />
+      <pointLight position={[0, 0, 0]} intensity={1.5} color="#ff8800" distance={200} />
 
       {/* Asteroid Belt */}
       <AsteroidBelt />
@@ -32,18 +40,9 @@ export default function SolarSystem() {
         <Planet
           key={planet.name}
           data={planet}
-          isSelected={selectedPlanet === planet.name}
-          onClick={() => setSelectedPlanet(planet.name)}
+          onClick={() => onPlanetSelect(planet.name)}
         />
       ))}
-
-      {/* Planet info card */}
-      {selectedPlanet && (
-        <PlanetCard
-          planet={planetsData.find((p) => p.name === selectedPlanet)!}
-          onClose={() => setSelectedPlanet(null)}
-        />
-      )}
     </>
   );
 }

@@ -58,18 +58,8 @@ body {
   overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 300vh; /* Allow scrolling for camera zoom */
 }
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 0;
-  pointer-events: auto;
-}
 
 #root {
   position: relative;

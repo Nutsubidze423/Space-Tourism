@@ -24,7 +24,7 @@ export default function Navbar() {
         justifyContent: "space-between",
         alignItems: "center",
         zIndex: 100,
-        mixBlendMode: "difference", // Ensure visibility against bright backgrounds
+        pointerEvents: "auto",
       }}
     >
       {/* Logo */}

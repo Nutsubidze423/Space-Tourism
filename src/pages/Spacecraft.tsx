@@ -1,6 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stage, Environment } from "@react-three/drei";
+import { OrbitControls, Environment, Stars } from "@react-three/drei";
+import { EffectComposer, Bloom, ChromaticAberration } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 import { Suspense, useState } from "react";
+import * as THREE from "three";
 import SpacecraftModel from "../components/canvas/SpacecraftModel";
 import Navbar from "../components/ui/Navbar";
 import LuxuryButton from "../components/ui/LuxuryButton";
@@ -35,18 +38,43 @@ export default function Spacecraft() {
           zIndex: 0,
         }}
       >
-        <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 8], fov: 50 }}>
-          <color attach="background" args={["#050505"]} />
+        <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 2, 10], fov: 45 }}>
+          <color attach="background" args={["#030508"]} />
+          <fog attach="fog" args={["#030508", 20, 60]} />
           <Suspense fallback={null}>
-            <Stage environment="city" intensity={0.5}>
-              <SpacecraftModel
-                key={activeShip.id} // Re-mounts on change for animation
-                color={activeShip.color}
-                type={activeShip.id}
+            <Stars radius={120} depth={60} count={4000} factor={3} saturation={0} fade speed={0.5} />
+
+            <SpacecraftModel
+              key={activeShip.id}
+              color={activeShip.color}
+              type={activeShip.id}
+            />
+
+            {/* Key light — strong from upper-front */}
+            <directionalLight position={[4, 8, 5]} intensity={2.5} color="#cce0ff" castShadow />
+            {/* Rim light — from behind */}
+            <directionalLight position={[-5, 2, -6]} intensity={1.2} color={activeShip.color} />
+            {/* Fill — soft from below */}
+            <pointLight position={[0, -5, 3]} intensity={0.6} color="#223355" />
+            {/* Ambient */}
+            <ambientLight intensity={0.08} />
+
+            <OrbitControls
+              autoRotate
+              autoRotateSpeed={1.2}
+              enableZoom={false}
+              minPolarAngle={Math.PI * 0.25}
+              maxPolarAngle={Math.PI * 0.75}
+            />
+            <Environment preset="night" />
+
+            <EffectComposer>
+              <Bloom intensity={0.8} luminanceThreshold={0.3} luminanceSmoothing={0.85} height={300} />
+              <ChromaticAberration
+                blendFunction={BlendFunction.NORMAL}
+                offset={new THREE.Vector2(0.0005, 0.0005)}
               />
-            </Stage>
-            <OrbitControls autoRotate autoRotateSpeed={2} />
-            <Environment preset="city" />
+            </EffectComposer>
           </Suspense>
         </Canvas>
       </div>

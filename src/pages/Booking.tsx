@@ -116,7 +116,6 @@ export default function Booking() {
               padding: "3rem",
               width: "450px",
               pointerEvents: "auto",
-              transform: "scale(0.9)",
               animation: "fadeIn 0.5s ease-out",
               border: "1px solid rgba(255,255,255,0.1)",
               backdropFilter: "blur(30px)",
