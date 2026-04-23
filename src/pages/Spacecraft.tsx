@@ -82,15 +82,16 @@ export default function Spacecraft() {
       {/* UI Overlay */}
       <div style={{
         position: "fixed",
-        bottom: "5%",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "90%",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "flex-end",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
         zIndex: 10,
         pointerEvents: "none",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0 4%",
       }}>
         {/* Specs Panel */}
         <div
@@ -148,8 +149,17 @@ export default function Spacecraft() {
           </p>
         </div>
 
-        {/* Carousel + ship dots */}
-        <div style={{ pointerEvents: "auto", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "1.2rem" }}>
+        {/* Carousel + ship dots — pinned to bottom-right */}
+        <div style={{
+          pointerEvents: "auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
+          gap: "1.2rem",
+          position: "fixed",
+          bottom: "5%",
+          right: "4%",
+        }}>
           {/* Ship index dots */}
           <div style={{ display: "flex", gap: "0.6rem" }}>
             {spacecraftList.map((_, i) => (
