@@ -18,12 +18,16 @@ export default function Navbar() {
         top: 0,
         left: 0,
         width: "100%",
-        padding: "2rem 3rem",
+        padding: "1.4rem 3rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         zIndex: 100,
         pointerEvents: "auto",
+        background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        borderBottom: "1px solid rgba(255,255,255,0.04)",
       }}
     >
       {/* Logo */}

@@ -402,6 +402,57 @@ function TitanHauler({ color }: { color: string }) {
   );
 }
 
+function HoloDisplay({ color }: { color: string }) {
+  const ring1Ref = useRef<THREE.Mesh>(null);
+  const ring2Ref = useRef<THREE.Mesh>(null);
+  const ring3Ref = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    const t = state.clock.elapsedTime;
+    if (ring1Ref.current) {
+      ring1Ref.current.rotation.z = t * 0.4;
+      (ring1Ref.current.material as THREE.MeshBasicMaterial).opacity = 0.18 + Math.sin(t * 1.1) * 0.08;
+    }
+    if (ring2Ref.current) {
+      ring2Ref.current.rotation.z = -t * 0.25;
+      ring2Ref.current.rotation.x = t * 0.15;
+      (ring2Ref.current.material as THREE.MeshBasicMaterial).opacity = 0.12 + Math.sin(t * 0.8 + 1) * 0.06;
+    }
+    if (ring3Ref.current) {
+      ring3Ref.current.rotation.y = t * 0.55;
+      (ring3Ref.current.material as THREE.MeshBasicMaterial).opacity = 0.1 + Math.sin(t * 1.4 + 2) * 0.05;
+    }
+  });
+
+  return (
+    <group>
+      {/* Orbit rings */}
+      <mesh ref={ring1Ref} rotation={[Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[3.8, 3.85, 128]} />
+        <meshBasicMaterial color={color} transparent opacity={0.18} side={THREE.DoubleSide} depthWrite={false} />
+      </mesh>
+      <mesh ref={ring2Ref} rotation={[Math.PI / 3, 0, 0]}>
+        <ringGeometry args={[4.4, 4.44, 128]} />
+        <meshBasicMaterial color={color} transparent opacity={0.12} side={THREE.DoubleSide} depthWrite={false} />
+      </mesh>
+      <mesh ref={ring3Ref} rotation={[Math.PI / 5, 0, 0]}>
+        <ringGeometry args={[5.0, 5.03, 128]} />
+        <meshBasicMaterial color={color} transparent opacity={0.1} side={THREE.DoubleSide} depthWrite={false} />
+      </mesh>
+
+      {/* Ground platform glow */}
+      <mesh position={[0, -4.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0, 3.2, 64]} />
+        <meshBasicMaterial color={color} transparent opacity={0.04} side={THREE.DoubleSide} depthWrite={false} />
+      </mesh>
+      <mesh position={[0, -4.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[3.1, 3.2, 64]} />
+        <meshBasicMaterial color={color} transparent opacity={0.25} side={THREE.DoubleSide} depthWrite={false} />
+      </mesh>
+    </group>
+  );
+}
+
 export default function SpacecraftModel({ color, type }: ModelProps) {
   const groupRef = useRef<THREE.Group>(null);
 
@@ -424,8 +475,11 @@ export default function SpacecraftModel({ color, type }: ModelProps) {
   };
 
   return (
-    <group ref={groupRef} rotation={[0, Math.PI / 6, 0]}>
-      {renderShip()}
-    </group>
+    <>
+      <HoloDisplay color={color} />
+      <group ref={groupRef} rotation={[0, Math.PI / 6, 0]}>
+        {renderShip()}
+      </group>
+    </>
   );
 }
